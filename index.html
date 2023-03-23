@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+       @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Outfit:wght@300;400;600&family=Roboto:wght@400;500;700&family=Zen+Dots&display=swap");
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      :root {
+        --primary-color-1: hsl(215, 51%, 70%);
+        --primary-color-2: hsl(178, 100%, 50%);
+
+        --Neutral-color-main: hsl(217, 54%, 11%);
+        --Neutral-color-card: hsl(216, 50%, 16%);
+        --Neutral-color-line: hsl(215, 32%, 27%);
+        --Neutral-color-white: hsl(0, 0%, 100%);
+      }
+
+      body {
+        background-color: var(--Neutral-color-main);
+        color: var(--Neutral-color-white);
+      }
+      p {
+        font-family: "Outfit", sans-serif;
+      }
+      .main-container {
+        background-color: var(--Neutral-color-card);
+        width: 350px;
+        height: 600px;
+        border-radius: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 1px 1px 1px 1px hsl(215, 32%, 27%);
+      }
+      .top-section {
+        margin: 20px;
+        height: 300px;
+      }
+      .top-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .down-section {
+        margin: 20px;
+      }
+
+      #title-p {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      #title-p:hover,
+      #name-span:hover {
+        color: var(--primary-color-2);
+        cursor: pointer;
+      }
+      #main-p,
+      .creation-by p {
+        color: var(--primary-color-1);
+      }
+
+      .eth-value {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 15px;
+      }
+
+      #current-value {
+        color: var(--primary-color-2);
+      }
+      #current-time {
+        color: var(--primary-color-1);
+      }
+      #separate-line {
+        height: 2px;
+        border-width: 0;
+        background-color: var(--Neutral-color-line);
+        margin: 20px;
+      }
+
+      #name-span {
+        color: white;
+      }
+      .eth-value-content {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 150px;
+        gap: 10px;
+      }
+      .eth-value-content img {
+        width: 10%;
+        height: 50%;
+      }
+      .time-section {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .time-section img {
+        width: 25px;
+      }
+      .creation-by {
+        margin-left: 20px;
+        display: flex;
+        justify-content: left;
+        font-size: 14px;
+        gap: 20px;
+        align-items: center;
+      }
+      .creation-by img {
+        height: 34px;
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+
+      .top-section {
+        position: relative;
+      }
+      .second-img {
+        position: absolute;
+        background-color: hsl(178, 100%, 50%, 20%);
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        opacity: 0;
+      }
+      .second-img img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+      }
+      .second-img:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="section-container">
+        <div class="top-section">
+          <img class="main-img" src="/images/image-equilibrium.jpg" alt="icon-view" />
+          <div class="second-img">
+            <img src="/images/icon-view.svg" alt="icon-view" />
+          </div>
+        </div>
+
+        <div class="down-section">
+          <p id="title-p">Equilibrium #3429</p>
+          <p id="main-p">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+          <div class="eth-value">
+            <div class="eth-value-content">
+              <img src="/images/icon-ethereum.svg" alt="ethereum-icon" />
+              <p id="current-value">0.041 ETH</p>
+            </div>
+            <div class="time-section">
+              <img src="/images/icon-clock.svg" alt="clock-icon" />
+              <p id="current-time">3 days left</p>
+            </div>
+          </div>
+        </div>
+        <hr id="separate-line" />
+        <div class="creation-by">
+          <img src="/images/image-avatar.png"  alt="avatar-image"/>
+          <p>Creation of <span id="name-span">Jules Wyvern</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/JackTheFullDev">Jack</a>.
+    </div>
+  </body>
+</html>
